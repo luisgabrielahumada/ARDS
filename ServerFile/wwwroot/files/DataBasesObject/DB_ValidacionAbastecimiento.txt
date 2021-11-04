@@ -1,0 +1,8 @@
+create procedure DB_ValidacionAbastecimiento(in v_cod_movimiento int, out tipo int)
+BEGIN
+    /*@tipo es mayor de 1 cuando el movimiento es un punto de abastecimiento*/
+    select if(count(*)>0, 1, 0) into tipo from movimiento m join puntos_entrega pe on pe.cod_puntos_entrega = m.cod_punto_entrega
+    where pe.cod_sistema_ext="261" and m.cod_movimiento=v_cod_movimiento;
+
+end;
+

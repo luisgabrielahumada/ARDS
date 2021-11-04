@@ -1,0 +1,75 @@
+{
+  "orderID": "20210811-1",
+   "Customer":{
+      "CodLinea":10,
+      "NombreCliente":"Jairo Andres Bustamante Gomez",
+      "Apellido":null,
+      "RepresentanteCliente":" ",
+      "Documento":"1092355499",
+      "Digito":" ",
+      "Celular":"1",
+      "Genero":1,
+      "AdditionalInformation":{
+         "CodigoCiudad":11001,
+         "Contacto":"Jairo Bustamante",
+         "Telefono1":" ",
+         "Telefono2":" ",
+         "Fax":" ",
+         "FechaCreacion":"2021-06-23T00:00:00",
+         "Direccion":"CALLE 6d #79 a 76 Castilla interior 7 apto 138",
+         "Usuario":"intWom",
+         "Email":"jbustamante@avantel.com.co",
+         "Cupo":0.0
+      }
+   },
+   "Delivery":{
+      "CodigoCliente":0,
+      "NombrePunto":"Jairo Andres",
+      "CodigoExt":" ",
+      "CodigoBodega":" ",
+      "AdditionalInformation":{
+         "CodigoCiudad":11001,
+         "Contacto":"Jairo Bustamante",
+         "Telefono1":"",
+         "Telefono2":null,
+         "Fax":" ",
+         "FechaCreacion":"2021-06-23T00:00:00",
+         "Direccion":"CALLE 6d #79 a 76 Castilla interior 7 apto 138",
+         "Usuario":"intWom",
+         "Email":"jbustamante@avantel.com.co",
+         "Cupo":0.0
+      }
+   },
+   "Warehouse":{
+      "NombreBodega":null,
+      "ResponsableBodega":null,
+      "IndRepuesto":false,
+      "BodegaLogica":false,
+      "CodigoBodegaFisica":0,
+      "CodigoExt":null,
+      "CodigoBodega":0,
+      "CodigoManual":null,
+      "AdditionalInformation":null
+   },
+   "Fields":null,
+   "geoReferencing":{
+      "coordinates":[
+         {
+            "longitude":"string",
+            "latitude":"string"
+         }
+      ],
+      "properties":[
+         {
+            "commonName":"string",
+            "address":"string",
+            "postcode":"string",
+            "country":"string",
+            "deparment":"string",
+            "city":"string",
+            "locality":"string",
+            "neighborhood":"string"
+         }
+      ]
+   }
+}
