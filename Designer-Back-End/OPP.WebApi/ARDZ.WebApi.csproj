@@ -40,6 +40,7 @@
     <None Remove="DataBase\System\Upload\DB_Files_Save.sql" />
     <None Remove="DataBase\System\Users\DB_User_Exists_Save.sql" />
     <None Remove="DataBase\_Common\DB_RootMenu_Get.sql" />
+    <None Remove="DataBase\_Script\DB.sql" />
   </ItemGroup>
 
   <ItemGroup>
@@ -65,6 +66,7 @@
     <Content Include="DataBase\System\Database\DB_DataBase_List.sql" />
     <Content Include="DataBase\_Common\DB_RootMenu_Get.sql" />
     <Content Include="DataBase\_Common\DB_Login_Validate.sql" />
+    <Content Include="DataBase\_Script\DB.sql" />
   </ItemGroup>
 
   <ItemGroup>
