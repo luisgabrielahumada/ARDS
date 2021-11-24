@@ -9,7 +9,7 @@ namespace ARDZ.Filter
     {
         public void Apply(OpenApiSchema schema, SchemaFilterContext context)
         {
-            foreach (var item in context.SchemaRepository.Schemas.Keys.Where(r =>  r.Contains("Extensions") || r.Contains("Filter") || r.Contains("Activator") || r.Contains("Attribute") || r.Contains("Http") || r.Contains("State")))
+            foreach (var item in context.SchemaRepository.Schemas.Keys.Where(r => r.Contains("Extensions") || r.Contains("Filter") || r.Contains("Activator") || r.Contains("Attribute") || r.Contains("Http") || r.Contains("State")))
                 context.SchemaRepository.Schemas.Remove(item);
 
             //context.SchemaRepository.Schemas.Remove("JToken");

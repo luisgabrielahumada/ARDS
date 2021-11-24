@@ -105,7 +105,7 @@
                             </b-col>
                             <b-col md="4" xl="4" sm="4" xs="12" class="pt-sm-5">
                                 <b-form-group id="input-group-6" label="" label-for="input-6">
-                                    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0" v-model="model.status" value="true" unchecked-value="false" switch>Status</b-form-checkbox>
+                                    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0" v-model="model.status" switch>Status</b-form-checkbox>
                                 </b-form-group>
                             </b-col>
                         </b-row>
@@ -186,7 +186,7 @@
                     login: '',
                     password: '',
                     email: '',
-                    status: 0,
+                    status: true,
                     document: '',
                     dataBaseId: 0,
                     roles: []

@@ -22,6 +22,7 @@
                                         <th>Alias</th>
                                         <th>ConnectionString</th>
                                         <th>Storage</th>
+                                        <th>Source</th>
                                         <th class="hidden-sm-down">Status</th>
                                     </tr>
                                 </thead>
@@ -45,8 +46,14 @@
                                         <td>
                                             {{row.storage}}
                                         </td>
+                                        <td>
+                                            <div v-if="row.databaseType == 1" class="fa fa-database"> SQL Server</div>
+                                            <div v-if="row.databaseType == 2" class="fa fa-database"> MySQL Server</div>
+                                            <div v-if="row.databaseType == 3" class="fa fa-soundcloud"> API</div>
+                                            <div v-if="row.databaseType == 0" class="fa fa-file-code-o"> No Configuration</div>
+                                        </td>
                                         <td class="width-150">
-                                            <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0" v-model="row.status" value="true" unchecked-value="false" disabled  switch></b-form-checkbox>
+                                            <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0" v-model="row.status" value="true" unchecked-value="false" disabled switch></b-form-checkbox>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -73,9 +80,15 @@
 <script>
     import Widget from '@/components/Widget/Widget';
     import { HTTP } from '@/core/Services/http-services';
+    import { vSwitch, vCase, vDefault } from 'v-switch-case';
     export default {
         name: 'DataBases',
-        components: { Widget },
+        components: {
+            Widget,
+            'switch': vSwitch,
+            'case': vCase,
+            'default': vDefault
+        },
         data() {
             return {
                 isloading: true,

@@ -10,5 +10,6 @@
         public JwtSettings JwtSettings { get; set; }
         public ConnectionStrings ConnectionStrings { get; set; }
         public UploadFile UploadFile { get; set; }
+        public DirectTV DirectTV { get; set; }
     }
 }

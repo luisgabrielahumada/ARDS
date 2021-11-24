@@ -51,7 +51,7 @@
                 this.loading = true;
                 return HTTP.post('Auth/Login', { login: this.model.email, password: this.model.password })
                     .then(response => {
-                        console.log(response.data.data);
+                        //console.log(response.data.data);
                         localStorage.setItem('access_token', response.data.data.token);
                         localStorage.setItem('auth_username', response.data.data.name);
                         localStorage.setItem('auth_email', response.data.data.email);

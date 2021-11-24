@@ -96,12 +96,12 @@ namespace ARDZ.Core
                                         pId = data.GetInteger("id"),
                                         pMenu = data.GetInteger("menu"),
                                         pRole = data.GetInteger("role"),
-                                        pL = data.GetInteger("l"),
-                                        pW = data.GetInteger("w"),
-                                        pD = data.GetInteger("d"),
-                                        pV = data.GetInteger("v"),
-                                        pR = data.GetInteger("r"),
-                                        pStatus = data.GetInteger("status"),
+                                        pL = data.GetBoolean("l"),
+                                        pW = data.GetBoolean("w"),
+                                        pD = data.GetBoolean("d"),
+                                        pV = data.GetBoolean("v"),
+                                        pR = data.GetBoolean("r"),
+                                        pStatus = data.GetBoolean("status"),
                                     })
                                     .Procedure<dynamic>();
         }

@@ -4,14 +4,14 @@
             <span class="icon">
                 <i :class="fullIconName"></i>
             </span>
-            {{header}}<sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
+            {{header}} <sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
             <b-badge v-if="badge" variant="primary" pill>{{badge}}</b-badge>
         </router-link>
         <router-link class="sidebar-link" v-else>
             <span class="icon">
                 <i :class="fullIconName"></i>
             </span>
-            {{header}}<sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
+            {{header}} <sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
             <b-badge v-if="badge" variant="primary" pill>{{badge}}</b-badge>
         </router-link>
     </li>
@@ -21,7 +21,7 @@
                 <span class="icon">
                     <i :class="fullIconName"></i>
                 </span>
-                {{header}}<sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{label}}</sup>
+                {{header}} <sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{label}}</sup>&nbsp;
                 <div :class="{caretWrapper: true, carretActive: isActive}">
                     <i class="fa fa-angle-right" />
                 </div>
@@ -30,18 +30,15 @@
         <b-collapse :id="'collapse' + index" :visible="isActive">
             <ul class="sub-menu">
                 <li v-for="item in childrenLinks" :class="{headerLink: true, className}">
-                    <div @click="() => toggleItemPanelCollapse(item)" style="overflow:hidden">
+                    <div @click="() => toggleItemPanelCollapse(item)" style="        overflow: hidden">
                         <router-link :to="item.link" event="" class="d-flex sidebar-link" v-if="item.childrenLinks.length!=0">
-                            <span class="icon">
-                                *
-                            </span>
-                            {{item.header}}<sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{item.label}}</sup>
+                            <i class="fa fa-database" /> {{item.header}}&nbsp;&nbsp;<sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{item.label}}</sup>
                             <div :class="{caretWrapper: true, carretActive: isActive}">
                                 <i class="fa fa-angle-right" />
                             </div>
                         </router-link>
                         <router-link :to="item.link" class="d-flex sidebar-link" v-else>
-                            {{item.header}}<sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{item.label}}</sup>
+                            <i class="fa fa-database" /> {{item.header}}&nbsp;&nbsp;<sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{item.label}}</sup>
                         </router-link>
                     </div>
                     <b-collapse :id="'collapse-' + item.index" :visible="item.active" v-if="item.childrenLinks.length!=0">
@@ -61,14 +58,14 @@
         </b-collapse>
     </li>
     <li v-else>
-        <div @click="() => GetItemMenu(id)" v-if="sourcePrime">
+        <div @click="() => GetItemMenu(id)" v-if="sourcePrime==0">
             <router-link to="/">
-                {{header}}<sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
+                - {{header}}<sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
             </router-link>
         </div>
         <div v-else>
             <router-link :to="index !== 'menu' && link">
-                {{header}}<sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
+                - {{header}}<sup v-if="label" :class="'text-' + labelColor" class="headerLabel">{{label}}</sup>
             </router-link>
         </div>
     </li>
@@ -101,7 +98,7 @@
             return {
                 headerLinkWasClicked: true,
                 headerItemLinkWasClicked: false,
-                rowMenu:null
+                rowMenu: null
             };
         },
         methods: {
@@ -118,12 +115,14 @@
                 return HTTP.post('Menu/GetItemMenu', { id: id, userid: localStorage.getItem("auth_userId") })
                     .then(response => {
                         this.rowMenu = response.data.data;
+                        console.log(this.rowMenu);
                         //console.log(this.rowMenu);
                         if (this.rowMenu == null || this.rowMenu == undefined || this.rowMenu.autorized == 0) {
                             this.$router.push('/system/not-authorized');
                             return;
                         }
-                        this.$router.push(this.rowMenu.path + '?token=' + this.rowMenu.token);
+                        this.$router.push(this.rowMenu.path + '?token=' + this.rowMenu.token + "&api=" + this.rowMenu.api + "&url=" + this.rowMenu.urlApi);
+                        return;
                     })
                     .catch(e => {
                         this.$toasted.error(e.response.data);
@@ -145,5 +144,6 @@
         },
     };
 </script>
-
+<!---->
 <style src="./NavLink.scss" lang="scss" scoped />
+

@@ -46,27 +46,27 @@
                                         <td>
                                             <b-form-checkbox id="checkbox-l"
                                                              v-model="row.l"
-                                                             name="checkbox-1" value="1" unchecked-value="0" switch disabled>L</b-form-checkbox>
+                                                             name="checkbox-1" switch disabled>L</b-form-checkbox>
                                         </td>
                                         <td>
                                             <b-form-checkbox id="checkbox-v"
                                                              v-model="row.v"
-                                                             name="checkbox-1" value="1" unchecked-value="0"  switch disabled>V</b-form-checkbox>
+                                                             name="checkbox-1"  switch disabled>V</b-form-checkbox>
                                         </td>
                                         <td>
                                             <b-form-checkbox id="checkbox-w"
                                                              v-model="row.w"
-                                                             name="checkbox-1" value="1" unchecked-value="0" switch disabled>W</b-form-checkbox>
+                                                             name="checkbox-1" v switch disabled>W</b-form-checkbox>
                                         </td>
                                         <td>
                                             <b-form-checkbox id="checkbox-r"
                                                              v-model="row.r"
-                                                             name="checkbox-1" value="1" unchecked-value="0"  switch disabled>R</b-form-checkbox>
+                                                             name="checkbox-1" switch disabled>R</b-form-checkbox>
                                         </td>
                                         <td>
                                             <b-form-checkbox id="checkbox-d"
                                                              v-model="row.d"
-                                                             name="checkbox-1" value="1" unchecked-value="0"  switch disabled>D</b-form-checkbox>
+                                                             name="checkbox-1"   switch disabled>D</b-form-checkbox>
                                         </td>
                                     </tr>
                                 </table>
@@ -106,7 +106,7 @@
                     { text: 'D', value: 'D' },
                 ],
                 role: 0,
-                status: false
+                status: true
             };
         },
         computed: {
@@ -120,12 +120,12 @@
                     name: this.roles.find(m => m.id == this.role).name,
                     role: this.role,
                     menu: this.id,
-                    l: this.actions.some(m => m == 'L')==true ? 1 :0,
-                    v: this.actions.some(m => m == 'V') == true ? 1 : 0,
-                    w: this.actions.some(m => m == 'W') == true ? 1 : 0,
-                    r: this.actions.some(m => m == 'R') == true ? 1 : 0,
-                    d: this.actions.some(m => m == 'D') == true ? 1 : 0,
-                    status: this.status == true ? 1 : 0,
+                    l: this.actions.some(m => m == 'L'),
+                    v: this.actions.some(m => m == 'V'),
+                    w: this.actions.some(m => m == 'W'),
+                    r: this.actions.some(m => m == 'R'),
+                    d: this.actions.some(m => m == 'D'),
+                    status: this.status,
                 };
                 return HTTP.post('Menu/SaveAccess', data)
                     .then(response => {

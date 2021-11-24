@@ -22,7 +22,7 @@ namespace ARDZ.Controllers
         }
 
         [HttpPost]
-        public HttpMessage<dynamic> UploadFile(IFormCollection files, int id, string tableName)
+        public HttpMessage<dynamic> UploadFile(IFormCollection files, int id, string tableName, bool isLocal)
         {
             // full path to file in temp location
             foreach (var file in files.Files)
@@ -39,18 +39,31 @@ namespace ARDZ.Controllers
                 }
                 if (string.IsNullOrEmpty(s))
                     continue;
-
-                _process.UploadFile(new Context
+                if (isLocal)
                 {
-                    Token = HttpContext.Request.Query["token"]
-                }, new Dictionary<string, object>
+                    _process.UploadFile(null, new Dictionary<string, object>
+                    {
+                        { "recordId", id },
+                        { "tableName", tableName },
+                        { "name", file.FileName },
+                        { "contenType", file.ContentType },
+                        { "file", s }
+                    });
+                }
+                else
                 {
-                    { "recordId", id },
-                    { "tableName", tableName },
-                    { "name", file.FileName },
-                    { "contenType", file.ContentType },
-                    { "file", s }
-                });
+                    _process.UploadFile(new Context
+                    {
+                        Token = HttpContext.Request.Query["token"]
+                    }, new Dictionary<string, object>
+                    {
+                        { "recordId", id },
+                        { "tableName", tableName },
+                        { "name", file.FileName },
+                        { "contenType", file.ContentType },
+                        { "file", s }
+                    });
+                }
             }
 
             return new HttpMessage<dynamic>
@@ -61,12 +74,13 @@ namespace ARDZ.Controllers
         }
 
         [HttpGet]
-        public HttpMessage<dynamic> Get(int id, string tableName)
+        public HttpMessage<dynamic> Get(int id, string tableName, bool islocal)
         {
             //TODO: llamar al metodo que valida el usuario en la base de datos.
             var data = _process.GetFiles(new Context
             {
-                Token = HttpContext.Request.Query["token"]
+                Token = HttpContext.Request.Query["token"],
+                IsLocal = islocal
             }, new Dictionary<string, object>
                 {
                     { "id", id },

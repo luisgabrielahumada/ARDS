@@ -30,7 +30,6 @@
     <None Remove="DataBase\DB_Users_Get.sql" />
     <None Remove="DataBase\DB_Users_Save.sql" />
     <None Remove="DataBase\DB_User_List.sql" />
-    <None Remove="DataBase\Prime\DB_Truck_List.sql" />
     <None Remove="DataBase\System\Menus\DB_MenuByPermissions_Save.sql" />
     <None Remove="DataBase\System\Menus\DB_Menu_Item_Get.sql" />
     <None Remove="DataBase\System\Menus\DB_Menu_Save.sql" />
@@ -44,7 +43,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="DataBase\Prime\DB_Truck_List.sql" />
     <Content Include="DataBase\System\Database\DB_DataBase_Save.sql" />
     <Content Include="DataBase\System\Database\DB_DataBase_Get.sql" />
     <Content Include="DataBase\System\Menus\DB_MenuByPermissions_Save.sql" />

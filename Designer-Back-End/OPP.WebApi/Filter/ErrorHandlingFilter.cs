@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ARDZ.Helper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Net;
 using System.Security.Authentication;
-using ARDZ.Helper;
 
 namespace ARDZ.Filter
 {
@@ -34,7 +34,7 @@ namespace ARDZ.Filter
             Exception exception,
             HttpStatusCode code)
         {
-            context.Result = new JsonResult(new HttpMessageError<Exception>() { IsSuccess = false, Stack = exception.ToString(), Message= exception.Message, StatusCode = HttpStatusCode.BadRequest })
+            context.Result = new JsonResult(new HttpMessageError<Exception>() { IsSuccess = false, Stack = exception.ToString(), Message = exception.Message, StatusCode = HttpStatusCode.BadRequest })
             {
                 StatusCode = (int)code
             };

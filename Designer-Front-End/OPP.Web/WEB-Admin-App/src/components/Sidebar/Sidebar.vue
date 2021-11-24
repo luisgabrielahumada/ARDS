@@ -164,7 +164,7 @@
                 return HTTP.post('Menu/GetAccess', { id: id })
                     .then(response => {
                         this.items = response.data.data;
-                        //console.log(this.items);
+                        console.log(this.items);
                     })
                     .catch(e => {
                         this.$toasted.error(e.response.data.message);
@@ -186,6 +186,7 @@
         }
     };
 </script>
+
 
 <!-- Sidebar styles should be scoped -->
 <style src="./Sidebar.scss" lang="scss" scoped />

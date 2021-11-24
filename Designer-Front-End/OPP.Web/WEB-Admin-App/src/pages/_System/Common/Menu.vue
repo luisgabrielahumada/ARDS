@@ -113,12 +113,12 @@
                                 <b-row>
                                     <b-col md="6" xl="6" sm="6" xs="12">
                                         <b-form-group id="input-group-5" label="" label-for="input-5">
-                                            <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0" v-model="model.status" value="true" unchecked-value="false" switch>Status</b-form-checkbox>
+                                            <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0" v-model="model.status"  switch>Status</b-form-checkbox>
                                         </b-form-group>
                                     </b-col>
                                     <b-col md="6" xl="6" sm="6" xs="12">
                                         <b-form-group id="input-group-6" label="" label-for="input-6">
-                                            <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0" v-model="model.sourcePrime" value="true" unchecked-value="false"  switch>Soure Prime</b-form-checkbox>
+                                            <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0" v-model="model.sourcePrime"   switch>Soure Prime</b-form-checkbox>
                                         </b-form-group>
                                     </b-col>
                                 </b-row>
@@ -181,9 +181,9 @@
                     path: '',
                     icon: '',
                     root: 0,
-                    status: 0,
+                    status: true,
                     dataBaseId: 0,
-                    sourcePrime: 0
+                    sourcePrime: false
                 },
             };
         },

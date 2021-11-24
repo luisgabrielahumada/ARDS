@@ -103,17 +103,12 @@ namespace ARDZ
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             //services.AddScoped<IWeatherForecast, WeatherForecast>();
             services.AddSingleton<IAuth, Auth>();
-            services.AddSingleton<ICountries, Countries>();
-            services.AddSingleton<ICities, Cities>();
-            services.AddSingleton<ITemplates, Templates>();
             services.AddSingleton<IUpload, Upload>();
-
             services.AddSingleton<IDataBase, DataBase>();
             services.AddSingleton<IUser, User>();
             services.AddSingleton<IRole, Role>();
             services.AddSingleton<IPermission, Permission>();
             services.AddSingleton<IMenu, Menu>();
-            services.AddSingleton<ITruck, Truck>();
 
             #region cors
             //services.AddCors();

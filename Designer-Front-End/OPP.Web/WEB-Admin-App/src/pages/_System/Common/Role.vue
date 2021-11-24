@@ -34,7 +34,7 @@
                                             {{row.name}}
                                         </td>
                                         <td class="width-150">
-                                            <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0" v-model="row.status" value="true" unchecked-value="false" disabled  switch></b-form-checkbox>
+                                            <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0" v-model="row.status" disabled  switch></b-form-checkbox>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -112,7 +112,7 @@
                 model: {
                     id: 0,
                     name: 'New Role',
-                    status: 0
+                    status: true
                 }
             };
         },

@@ -6,7 +6,7 @@
 
   @media (min-width: map_get($grid-breakpoints, lg))
   and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   a {
@@ -25,9 +25,9 @@
     align-items: center;
     position: relative;
     padding-left: 64px;
-    line-height: 58px;
+    line-height: 36px;
     border-top: 1px solid $sidebar-item-border-color;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: $font-weight-normal;
 
 
@@ -73,12 +73,12 @@
   }
 
   .collapse > ul > li a {
-    padding-left: 50px;
+    padding-left: 5px;
   }
 }
 
 .headerLabel {
-  font-weight: 600;
+  //font-weight: 600;
 }
 
 .caretWrapper {
@@ -139,8 +139,8 @@ a.router-link-active {
     }
 
     a {
-      padding: 10px 20px 10px 26px;
-      font-size: $font-size-mini;
+      padding: 3px 10px  1px  17px;
+      //font-size: $font-size-mini;
 
       &:hover {
         background-color: var(--sidebar-item-hover-bg-color);

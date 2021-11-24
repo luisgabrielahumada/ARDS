@@ -109,7 +109,7 @@ namespace ARDZ.Controllers
                 Data = new
                 {
                     row = data.Item1,
-                    items= data.Item2
+                    items = data.Item2
                 }
             };
         }

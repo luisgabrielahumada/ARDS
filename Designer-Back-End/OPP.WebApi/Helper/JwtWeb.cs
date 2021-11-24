@@ -15,7 +15,7 @@ namespace ARDZ.Helper
     {
         public string JwtKey;
         public string JwtIssuer;
-        public Dictionary<string, object> GenerateJSONWebToken(Dictionary<string,object> userInfo, IConfiguration configuration)
+        public Dictionary<string, object> GenerateJSONWebToken(Dictionary<string, object> userInfo, IConfiguration configuration)
         {
             SetConfiguration(configuration);
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtKey));

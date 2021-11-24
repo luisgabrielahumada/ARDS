@@ -43,7 +43,7 @@ namespace ARDZ.Controllers
         {
 
             //TODO: llamar al metodo que valida el usuario en la base de datos.
-            var data = _process.Get(new Dictionary<string, object> { {"id" , id } });
+            var data = _process.Get(new Dictionary<string, object> { { "id", id } });
 
             return new HttpMessage<dynamic>
             {
@@ -68,11 +68,11 @@ namespace ARDZ.Controllers
         }
 
         [HttpPost]
-        public HttpMessage<dynamic> Save(Dictionary<string,object> data)
+        public HttpMessage<dynamic> Save(Dictionary<string, object> data)
         {
 
             //TODO: llamar al metodo que valida el usuario en la base de datos.
-            var id =_process.Save(data);
+            var id = _process.Save(data);
 
             return new HttpMessage<dynamic>
             {

@@ -1,6 +1,6 @@
 ﻿import axios from 'axios';
 export const HTTP = axios.create({
-    baseURL: "https://api-business-manager.azurewebsites.net/api/",
+    baseURL: "http://localhost:5901/api/",
     headers: {
         "Cache-Control": "no-cache",
         "Access-Control-Allow-Origin": "*",

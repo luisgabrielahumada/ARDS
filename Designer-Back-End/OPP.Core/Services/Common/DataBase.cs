@@ -59,7 +59,10 @@ namespace ARDZ.Core
                                            pAlias = data.GetString("alias"),
                                            pConnectionString = data.GetString("connectionString"),
                                            pStorage =  data["storage"] ?? string.Empty,
-                                           pStatus = data.GetBoolean("status")
+                                           pStatus = data.GetBoolean("status"),
+                                           pUrlApi = data.GetString("urlApi"),
+                                           pApi = data.GetBoolean("api"),
+                                           pDatabaseType = data.GetInteger("databaseType")
                                       })
                                       .Procedure<int>()
                                       .FirstOrDefault();

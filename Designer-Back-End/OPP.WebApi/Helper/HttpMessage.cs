@@ -1,5 +1,5 @@
-﻿using System.Net;
-using ARDZ.Filter;
+﻿using ARDZ.Filter;
+using System.Net;
 
 namespace ARDZ.Helper
 {
@@ -9,7 +9,7 @@ namespace ARDZ.Helper
         public HttpStatusCode StatusCode { get; set; }
         public bool IsSuccess { get; set; } = true;
         public T Data { get; set; }
-        
+
     }
 
     [SwaggerExclude]
